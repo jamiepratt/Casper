@@ -109,11 +109,25 @@ into the {body} of the default.hbs template --}}
                 </div>
             </section>
 
+            <section class="post-full-comments">
+                <div id='discourse-comments'></div>
+            </section>
+
             {{!-- Email subscribe form at the bottom of the page --}}
             {{#if @labs.members}}
                 {{> subscribe-form}}
             {{/if}}
 
+            <script type="text/javascript">
+                DiscourseEmbed = { discourseUrl: 'https://sex.designedbyselection.org/',
+                    discourseEmbedUrl: '{{url absolute="true"}}' };
+
+                (function() {
+                    var d = document.createElement('script'); d.type = 'text/javascript'; d.async = true;
+                    d.src = DiscourseEmbed.discourseUrl + 'javascripts/embed.js';
+                    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(d);
+                })();
+            </script>
         </article>
 
     </div>
